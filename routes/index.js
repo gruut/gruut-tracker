@@ -1,10 +1,8 @@
 const express = require('express');
+const TrackerServer = require('../lib/server/server');
 
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res) => {
-  res.send(200);
-});
+router.get('/announce', TrackerServer.onHttpRequest);
 
 module.exports = router;
