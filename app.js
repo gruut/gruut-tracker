@@ -6,8 +6,10 @@ const logger = require('morgan');
 const redis = require('redis');
 
 const indexRouter = require('./routes/index');
+const CronJob = require('./schedules/index');
 
 global.redisClient = redis.createClient();
+CronJob.start();
 
 const app = express();
 
