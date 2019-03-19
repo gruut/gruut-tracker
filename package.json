@@ -20,5 +20,16 @@
   "bugs": {
     "url": "https://github.com/gruut/gruut-tracker/issues"
   },
-  "homepage": "https://github.com/gruut/gruut-tracker#readme"
+  "homepage": "https://github.com/gruut/gruut-tracker#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
 }
