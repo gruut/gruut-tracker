@@ -4,7 +4,8 @@
   "description": "Tracker for Gruut public network",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js --exit",
+    "lint": "eslint --ext .js ."
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,15 @@
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "redis": "^2.8.0",
+    "redis-mock": "^0.43.0",
     "safe-buffer": "^5.1.2"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2"
   }
 }

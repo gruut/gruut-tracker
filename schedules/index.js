@@ -1,4 +1,6 @@
-const { CronJob } = require('cron');
+const {
+  CronJob,
+} = require('cron');
 const moment = require('moment');
 
 const common = require('../lib/common');
@@ -15,7 +17,7 @@ schedules.jobs.push(flushOldPeerData);
 schedules.start = function () {
   this.jobs.forEach((job) => {
     job.start();
-  })
+  });
 };
 
 module.exports = schedules;

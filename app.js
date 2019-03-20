@@ -4,11 +4,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const redis = require('redis');
+const redisTest = require('redis-mock');
 
 const indexRouter = require('./routes/index');
 const CronJob = require('./schedules/index');
 
-global.redisClient = redis.createClient();
+if (process.env.NODE_ENV === 'test') {
+  global.redisClient = redisTest.createClient();
+} else {
+  global.redisClient = redis.createClient();
+}
 CronJob.start();
 
 const app = express();

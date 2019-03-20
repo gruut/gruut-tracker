@@ -9,6 +9,19 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/app.js"
-    }
+    },
+    {
+      "name": "Run mocha",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "stopOnEntry": false,
+      "args": ["test/**/*.js", "--no-timeouts", "--exit"],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "env": {
+          "NODE_ENV": "test"
+      }
+  }
   ]
 }
