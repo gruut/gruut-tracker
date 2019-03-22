@@ -8,9 +8,9 @@ const common = require('../lib/common');
 const schedules = {};
 
 schedules.jobs = [];
-const flushOldPeerData = new CronJob('* 30 * * * *', (() => {
+const flushOldPeerData = new CronJob('* 3 * * * *', (() => {
   const oldTime = moment().subtract(30, 'minutes').unix();
-  global.redisClient.zrevrangebyscore(common.DB_KEY, '-inf', oldTime);
+  global.redisClient.zremrangebyscore(common.DB_KEY, '-inf', oldTime);
 }));
 schedules.jobs.push(flushOldPeerData);
 
